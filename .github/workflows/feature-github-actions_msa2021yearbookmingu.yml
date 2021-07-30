@@ -39,5 +39,5 @@ jobs:
         app-name: MSA2021YearBookMingu
         slot-name: Production
         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_05E2D6AFDC104542835901E0AC35F786 }}
-        package: .
+        package: "./my_big_app/build"
 
