@@ -11,6 +11,10 @@ on:
 jobs:
   build-and-deploy:
     runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: "./my_big_app"
+
 
     steps:
     # checkout the repo
