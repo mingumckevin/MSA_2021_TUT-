@@ -6,7 +6,7 @@ name: Azure App Service - MSA2021YearBookMingu(Production), Build and deploy Nod
 on:
   push:
     branches:
-      - feature/github-actions
+      - main
 
 jobs:
   build-and-deploy:
