@@ -3,9 +3,27 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {ApolloProvider, InMemoryCache} from "@apollo/client";
+import { Router } from '@material-ui/icons';
+import ApolloClient from 'apollo-client';
+
+const graphQLClient = new ApolloClient({
+  uri: "http://msa-yearbook.azurewebsites.net/graphql/",
+  cache: new InMemoryCache()
+});
+
 
 ReactDOM.render(
   <React.StrictMode>
+      <Router>
+    <ApolloProvider client={graphQLClient}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </ApolloProvider>
+  </Router>,
+  document.getElementById('root')
+
     <App />
   </React.StrictMode>,
   document.getElementById('root')
